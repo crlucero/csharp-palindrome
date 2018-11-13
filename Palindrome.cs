@@ -12,10 +12,18 @@ public class Palindrome {
         Console.WriteLine("Enter a word to check: ");
         string Word = Console.ReadLine();
         char[] Letters = Word.ToCharArray();
-        
-        Array.Reverse(Letters);
-        string WordReversed = new string(Letters);
+        char[] Reversed = new char[Letters.Length];
 
+        int j = 0;
+        
+        for(int i = Letters.Length -1; i >=0; i--)
+        {
+            Reversed[j] = Letters[i];
+            j++;
+        }
+
+        string WordReversed = new string(Reversed);
+        Console.WriteLine(WordReversed);
 
         if(Word == WordReversed)
         {
